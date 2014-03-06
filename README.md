@@ -1,6 +1,8 @@
 TSRPullThreshold
 ================
 
+*Note: this class is still under construction and may be unstable under certain conditions.*
+
 You can attach a pull threshold to any view, specifying the offset threshold and pull direction, which will then make that view "pullable" by dragging. If released past the offset threshold, the TSRPullThreshold object will fire a **finish** block; if under, the attached view will snap back to its original position and the **cancel** block will be called instead. Alternatively, TSRPullThreshold can be set to drawer mode, which will convert the attached view into a drawer, where releasing past the threshold will automatically pull the view into the specified "open" position.
 
 Any TSRPullThreshold object can be enabled or disabled by using `setEnabled`. As TSRPullThreshold uses a pan gesture recognizer, you may want to use this to avoid other recognizer conflicts.
