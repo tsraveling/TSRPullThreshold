@@ -12,7 +12,7 @@ Normal Mode
 
 Here's how you'd attach the pull threshold to a view in the normal mode:
 
-``` Objective C
+```objectivec
 TSRPullThreshold *puller = [TSRPullThreshold attachToView:view
                          direction:kTSRPullDirectionRight
                          threshold:30.0f
@@ -29,7 +29,8 @@ TSRPullThreshold *puller = [TSRPullThreshold attachToView:view
                              
                              // This code is called when the view is released under the threshold.
                              
-                         }];```
+                         }];
+```
 
 This allows quite a bit of flexibility. I use this method in Ascendance, a current project I'm working on, to provide a nice, responsive way to "swipe open" an array of icons across the bottom of the screen, by setting the position of the other icons in the `pullBlock`.
 
@@ -38,7 +39,7 @@ Drawer Mode
 
 Drawer mode is used if you have, say, a pull-down header notification system, or a pull-to-the-right menu similar to the one used in the Facebook mobile app.
 
-``` Objective C
+```objectivec
 TSRPullThreshold *drawerpull = [TSRPullThreshold attachDrawerToView:view
                                                               direction:kTSRPullDirectionRight
                                                               threshold:30.0f
@@ -56,7 +57,8 @@ TSRPullThreshold *drawerpull = [TSRPullThreshold attachDrawerToView:view
                                                                   
                                                                   // This code is called when the view is released under the threshold.
                                                                   
-                                                              }];```
+                                                              }];
+```
                                                               
 Any view can be set up with animated pull-to-open function with just that line of code. In this case `outPoint` is the offset to which the view will "snap" open. So in the above case, assuming a view with x origin at, say, -300.0f and width 320.0f, pulling on that 20.0f wide visible bar on the left, past 30.0f to the right, would cause to snap open and occupy the whole screen. Pulling back to the left would then close it in the same way.
 
